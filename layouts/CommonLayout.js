@@ -59,7 +59,7 @@ const CommonLayout = ({
       <svg
         width={0}
         height={0}
-        class="headermasksvg"
+        className="headermasksvg"
         xmlns="http://www.w3.org/2000/svg"
       >
         <clipPath id="headermask" clipPathUnits="objectBoundingBox">

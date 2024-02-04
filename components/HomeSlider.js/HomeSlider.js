@@ -5,11 +5,13 @@ import Image from 'next/image'
 const HomeSlider = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [animate, setAnimate] = useState(false)
-  const slideDuration = 400000
+  const slideDuration = 10000
+
+  // Add more slides as needed
+
   const changeSlide = newSlide => {
     setAnimate(false)
     setCurrentSlide(newSlide)
-
     setTimeout(() => {
       setAnimate(true)
     }, 1000)
@@ -18,22 +20,22 @@ const HomeSlider = ({ slides }) => {
     changeSlide(currentSlide === slides.length - 1 ? 0 : currentSlide + 1)
   }
 
-  const prevSlide = () => {
-    changeSlide(currentSlide === 0 ? slides.length - 1 : currentSlide - 1)
-  }
   useEffect(() => {
     const slideTimer = setInterval(nextSlide, slideDuration)
 
-    // Clear the interval ehrn the component unmount
     return () => clearInterval(slideTimer)
-  }, [currentSlide]) // Empty dependency array ensures this runs once on mount
+  }, [])
 
-  console.log(slides)
   return (
     <div className="homeSlider-container">
       <div className="homeSlider-background">
         {slides.map((slide, index) => (
-          <div key={index}>
+          <div
+            className={`  animationSlider-slide${
+              currentSlide === index ? 'animationSlider-active ' : ''
+            } `}
+            key={index}
+          >
             <div className="text-container">
               <div className="logo">
                 <Image src={slide.image6} width={722} height={253} />
@@ -53,19 +55,29 @@ const HomeSlider = ({ slides }) => {
               </div>
             </div>
             <div className="image-container">
-              <div className="image1">
+              <div
+                className={`${animate ? ' image1 image1-animate' : 'image1'}`}
+              >
                 <img src={slides[currentSlide].image1} alt="" />
               </div>
-              <div className="image2">
+              <div
+                className={`${animate ? ' image2 image2-animate' : 'image2'}`}
+              >
                 <img src={slides[currentSlide].image2} alt="" />
               </div>
-              <div className="image3">
+              <div
+                className={`${animate ? ' image3 image3-animate' : 'image3'}`}
+              >
                 <img src={slides[currentSlide].image3} alt="" />
               </div>
-              <div className="image4">
+              <div
+                className={`${animate ? ' image4 image4-animate' : 'image4'}`}
+              >
                 <img src={slides[currentSlide].image4} alt="" />
               </div>
-              <div className="image5">
+              <div
+                className={`${animate ? ' image5 image5-animate' : 'image5'}`}
+              >
                 <img src={slides[currentSlide].image5} alt="" />
               </div>
             </div>

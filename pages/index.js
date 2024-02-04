@@ -55,6 +55,24 @@ const index = () => {
       image5: '/slides/5.png',
       image6: '/slides/6.png',
     },
+    {
+      id: 1,
+      image1: '/slides/1.png',
+      image2: '/slides/2.png',
+      image3: '/slides/3.png',
+      image4: '/slides/4.png',
+      image5: '/slides/5.png',
+      image6: '/slides/6.png',
+    },
+    {
+      id: 3,
+      image1: '/slides/1.png',
+      image2: '/slides/2.png',
+      image3: '/slides/3.png',
+      image4: '/slides/4.png',
+      image5: '/slides/5.png',
+      image6: '/slides/6.png',
+    },
   ]
   return (
     <CommonLayout title="hobbrands" noBreadcrumb>

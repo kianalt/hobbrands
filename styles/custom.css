@@ -128,6 +128,13 @@ strong {
   width: 100%;
   height: 80vh;
 }
+.animationSlider-slide {
+  display: none;
+}
+.animationSlider-slide.animationSlider-active {
+  display: block;
+  width: 100%;
+}
 .homeSlider-container .text-container {
   width: 50%;
   float: left;
@@ -189,6 +196,7 @@ strong {
   position: relative;
   float: right;
 }
+
 .homeSlider-container .image-container .image1 img {
   position: absolute;
   width: 36%;
@@ -196,15 +204,36 @@ strong {
   left: -30%;
   margin-top: 128px;
   max-width: 326px;
+  transition: all 3s linear;
+  transform: translateX(9000px);
+  -webkit-transition: all 3s linear;
+  -moz-transition: all 3s linear;
+  -ms-transition: all 3s linear;
+  -o-transition: all 3s linear;
+}
+.homeSlider-container .image-container .image1-animate img {
+  transform: translateX(0);
 }
 .homeSlider-container .image-container .image2 img {
   position: absolute;
   max-width: 478px;
-
+  transition: all 4s ease-out;
+  transform: translateX(90000px);
   z-index: 0;
   left: -2%;
   margin-top: 84px;
   z-index: 0;
+  -webkit-transform: translateX(7000px);
+  -moz-transform: translateX(90000px);
+  -ms-transform: translateX(90000px);
+  -o-transform: translateX(90000px);
+  -webkit-transition: all 4s ease-out;
+  -moz-transition: all 4s ease-out;
+  -ms-transition: all 4s ease-out;
+  -o-transition: all 4s ease-out;
+}
+.homeSlider-container .image-container .image2-animate img {
+  transform: translateX(0);
 }
 .homeSlider-container .image-container .image3 img {
   position: absolute;
@@ -213,6 +242,19 @@ strong {
   left: 110px;
   margin-top: 302px;
   z-index: 5;
+  transition: all 7s ease-out;
+  transform: translateX(12000px);
+  -webkit-transform: translateX(12000px);
+  -moz-transform: translateX(12000px);
+  -ms-transform: translateX(12000px);
+  -o-transform: translateX(12000px);
+  -webkit-transition: all 7s ease-out;
+  -moz-transition: all 7s ease-out;
+  -ms-transition: all 7s ease-out;
+  -o-transition: all 7s ease-out;
+}
+.homeSlider-container .image-container .image3-animate img {
+  transform: translateX(0);
 }
 .homeSlider-container .image-container .image4 img {
   position: absolute;
@@ -221,6 +263,19 @@ strong {
   right: 70px;
   margin-top: 34px;
   z-index: 4;
+  transition: all 9s ease-out;
+  transform: translateX(16000px);
+  -webkit-transform: translateX(16000px);
+  -moz-transform: translateX(16000px);
+  -ms-transform: translateX(16000px);
+  -o-transform: translateX(16000px);
+  -webkit-transition: all 9s ease-out;
+  -moz-transition: all 9s ease-out;
+  -ms-transition: all 9s ease-out;
+  -o-transition: all 9s ease-out;
+}
+.homeSlider-container .image-container .image4-animate img {
+  transform: translateX(0);
 }
 .homeSlider-container .image-container .image5 img {
   position: absolute;
@@ -228,4 +283,17 @@ strong {
   z-index: 0;
   right: 117px;
   margin-top: 404px;
+  transition: all 10s ease-out;
+  transform: translateX(18000px);
+  -webkit-transform: translateX(18000px);
+  -moz-transform: translateX(18000px);
+  -ms-transform: translateX(18000px);
+  -o-transform: translateX(18000px);
+  -webkit-transition: all 10s ease-out;
+  -moz-transition: all 10s ease-out;
+  -ms-transition: all 10s ease-out;
+  -o-transition: all 10s ease-out;
+}
+.homeSlider-container .image-container .image5-animate img {
+  transform: translateX(0);
 }
