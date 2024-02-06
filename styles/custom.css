@@ -117,6 +117,8 @@ strong {
 }
 .sochial a img {
 }
+
+/* Home Slidre DESKTOP */
 .homeSlider-container {
   width: 100%;
   height: 80vh;
@@ -124,7 +126,7 @@ strong {
   padding: 74px;
 }
 .homeSlider-background {
-  background-color: #efefef;
+  background-color: #f5f5f5;
   width: 100%;
   height: 80vh;
 }
@@ -296,4 +298,87 @@ strong {
 }
 .homeSlider-container .image-container .image5-animate img {
   transform: translateX(0);
+}
+
+/* TAQ SECTION DESKTOP */
+.taq-container {
+  width: 100%;
+  background-color: #f5f5f5;
+  height: 330px;
+  position: relative;
+  margin: 166px 0;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+}
+.taq-text-1 {
+  height: 50%;
+  color: #ffff;
+  text-align: start;
+  display: flex;
+  align-items: start;
+  line-height: 0.88;
+  transition: all 2s linear;
+  -webkit-transition: all 2s linear;
+  -moz-transition: all 2s linear;
+  -ms-transition: all 2s linear;
+  -o-transition: all 2s linear;
+  justify-content: flex-start;
+}
+.taq-text-2 {
+  transition: all 4s linear;
+  height: 50%;
+  color: #ffff;
+  text-align: start;
+  display: flex;
+  align-items: start;
+  line-height: 0.88;
+  justify-content: flex-end;
+}
+.taq-text-1 p {
+  font-size: 220px !important;
+  padding: 0;
+  margin: 0;
+  left: 0.9;
+  letter-spacing: -8mm;
+}
+.taq-text-2 p {
+  font-size: 220px !important;
+  padding: 0;
+  margin: 0;
+  left: 0.9;
+  letter-spacing: -8mm;
+}
+.taq-text-1-animate {
+  transition: 2s linear;
+  height: 50%;
+  color: #ffff;
+  text-align: start;
+  display: flex;
+  align-items: start;
+  line-height: 0.88;
+}
+.taq-text-2-animate {
+  transition: all 4s linear;
+  height: 50%;
+  color: #ffff;
+  text-align: start;
+  display: flex;
+  align-items: start;
+  line-height: 0.88;
+  justify-content: flex-end;
+}
+.taq-text-1-animate p {
+  font-size: 220px !important;
+  padding: 0;
+  margin: 0;
+  left: 0.9;
+  letter-spacing: -8mm;
+}
+.taq-text-2-animate p {
+  font-size: 220px !important;
+  padding: 0;
+  margin: 0;
+  left: 0.9;
+  letter-spacing: -8mm;
 }

@@ -4,6 +4,7 @@ import React from 'react'
 
 import CommonLayout from 'layouts/CommonLayout'
 import HomeSlider from 'components/HomeSlider.js/HomeSlider'
+import Taq from 'components/Taq/Taq'
 
 // Api
 // import api from 'utils/api'
@@ -78,6 +79,7 @@ const index = () => {
     <CommonLayout title="hobbrands" noBreadcrumb>
       <div className="">
         <HomeSlider slides={slides} />
+        <Taq />
       </div>
     </CommonLayout>
   )

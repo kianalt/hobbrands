@@ -17,19 +17,19 @@ import Link from 'next/link'
 const Sidebar = () => {
   const [activeSection, setActiveSection] = useState('')
 
-  const handleScroll = () => {
-    if (isSectionInView('section1')) {
-      setActiveSection('Text for Section 1')
-    } else if (isSectionInView('section2')) {
-      setActiveSection('Text for Section 2')
-    }
-  }
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+  // const handleScroll = () => {
+  //   if (isSectionInView('section1')) {
+  //     setActiveSection('Text for Section 1')
+  //   } else if (isSectionInView('section2')) {
+  //     setActiveSection('Text for Section 2')
+  //   }
+  // }
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleScroll)
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll)
+  //   }
+  // }, [])
 
   return (
     <div className="sidebar">
