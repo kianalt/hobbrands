@@ -3,6 +3,7 @@ import 'fonts/argentum/style.css'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'aos/dist/aos.css' // Add this line
 import 'styles/globals.css'
 import 'styles/custom.css'
 

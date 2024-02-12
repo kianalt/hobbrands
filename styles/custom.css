@@ -382,3 +382,138 @@ strong {
   left: 0.9;
   letter-spacing: -8mm;
 }
+.my-masonry-grid {
+  width: 100%;
+  margin: 0 90px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  /*Createstwocolumns*/ /*grid-row-end: span 2;
+  */
+  column-gap: 93px;
+  /*Thissetsthegapbetweenitems*/
+
+  box-sizing: border-box;
+}
+.masonery-portfolio:first-child {
+  margin-top: 120px; /* Adjust the value as needed */
+}
+.masonery-portfolio {
+  width: calc(50% - 90px);
+  padding: 0 43px 56px 43px;
+}
+
+.masonery-portfolio-image img {
+  width: 100%; /* Makes the image fill the container */
+  height: auto; /* Keeps the image aspect ratio */
+}
+
+.txt-masonery-container {
+  padding: 16px; /* Example padding around the text */
+}
+
+.type {
+  display: flex; /* Aligns the line image and the h6 horizontally */
+  align-items: center; /* Centers them vertically */
+  gap: 8px; /* Adds space between the line image and the h6 */
+  margin: 50px 0 30px 0;
+}
+
+.type img {
+  height: 1px; /* Example height for the line image */
+  width: 50px; /* Keeps the image aspect ratio */
+  margin-right: 5px;
+}
+
+.type h6 {
+  margin: 0; /* Removes default margin */
+  font-size: 16px; /* Example font size */
+  color: #000000; /* Example text color */
+  font-weight: 300;
+}
+
+.masonery-portfolio h3 {
+  padding: 0 16px; /* Example padding */
+  margin: 8px 0 30px 45px; /* Example margin */
+  font-size: 25px; /* Example font size */
+  font-weight: 400;
+}
+
+.masonery-portfolio p {
+  margin: 0; /* Removes default margin */
+  color: #606060; /* Example text color */
+  font-size: 16px; /* Example font size */
+  font-weight: 300;
+  margin-left: 60px;
+  margin-bottom: 44px;
+}
+.BlackBannerContainer {
+  width: 100%;
+  background-color: #000000;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.BlackBannerContainer .text-container {
+  width: 79%;
+  text-align: left;
+}
+.BlackBannerContainer .text-container p {
+  width: 100%;
+  font-size: 60px !important;
+  font-weight: 500;
+  color: #ffffff;
+  padding-left: 147px;
+}
+.BlackBannerContainer .link-blackContainer {
+  padding-right: 147px;
+  width: 21%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.BlackBannerContainer .link-blackContainer a {
+  width: 225px;
+  border: #ffffff 1px solid;
+  height: 63px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.BlackBannerContainer .link-blackContainer .white {
+  width: 4px;
+  background-color: #fff;
+  height: 63px;
+  transition: width ease-in-out 0.8s;
+  position: absolute;
+  left: 0;
+}
+.BlackBannerContainer .link-blackContainer:hover .white {
+  position: absolute;
+  width: 216px;
+  border: #ffffff 1px solid;
+  height: 63px;
+  color: #070707;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  justify-content: center;
+  transition: width ease-in-out 0.8s;
+}
+.BlackBannerContainer .link-blackContainer:hover a {
+  position: relative;
+  z-index: 3;
+  width: 225px;
+
+  height: 63px;
+  color: #010101;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
