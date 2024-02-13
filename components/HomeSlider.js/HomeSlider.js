@@ -34,6 +34,7 @@ const HomeSlider = ({ slides }) => {
             className={`  animationSlider-slide${
               currentSlide === index ? 'animationSlider-active ' : ''
             } `}
+            // eslint-disable-next-line react/no-array-index-key
             key={index}
           >
             <div className="text-container">

@@ -388,24 +388,21 @@ strong {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(2, 1fr);
-  /*Createstwocolumns*/ /*grid-row-end: span 2;
-  */
   column-gap: 93px;
-  /*Thissetsthegapbetweenitems*/
-
   box-sizing: border-box;
 }
-.masonery-portfolio:first-child {
-  margin-top: 120px; /* Adjust the value as needed */
-}
+
 .masonery-portfolio {
   width: calc(50% - 90px);
   padding: 0 43px 56px 43px;
 }
-
+.masonery-portfolio:first-child {
+  margin-top: 120px; /* Adjust the value as needed */
+}
 .masonery-portfolio-image img {
   width: 100%; /* Makes the image fill the container */
-  height: auto; /* Keeps the image aspect ratio */
+  height: 100%; /* Keeps the image aspect ratio */
+  position: relative;
 }
 
 .txt-masonery-container {
@@ -447,6 +444,61 @@ strong {
   margin-left: 60px;
   margin-bottom: 44px;
 }
+.my-masonry-grid-noTxt {
+  width: 100%;
+  margin: 120px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 23px;
+  box-sizing: border-box;
+}
+.masonery-portfolio-noTxt {
+  width: calc(30% - 23px);
+  margin: 10px;
+  position: relative;
+}
+.masonery-portfolio-noTxt .masonery-shadow-img {
+  width: 100%;
+  height: 100%;
+  /*Coverthefullheight*/
+  position: absolute;
+  z-index: 4;
+  background-color: #07070792;
+  top: 0px;
+  left: 0;
+  opacity: 0;
+  padding: 20px;
+  /*Initiallyhidden*/
+  transition: opacity 0.5s;
+}
+.masonery-portfolio-noTxt:hover .masonery-shadow-img {
+  opacity: 1; /* Show the shadow on hover */
+}
+.masonery-portfolio-noTxt .masonery-portfolio-Hovertext {
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+}
+.masonery-portfolio-noTxt:hover .masonery-portfolio-Hovertext {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  z-index: 5;
+  color: #ffffff;
+  display: flex;
+  height: 40px;
+}
+.masonery-portfolio-noTxt:hover .masonery-portfolio-Hovertext a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px 5px 6px 5px;
+
+  text-align: center;
+  margin: 5px;
+  border: 1px solid #fff;
+}
 .BlackBannerContainer {
   width: 100%;
   background-color: #000000;
@@ -483,6 +535,7 @@ strong {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 .BlackBannerContainer .link-blackContainer .white {
   width: 4px;
