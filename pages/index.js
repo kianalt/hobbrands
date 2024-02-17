@@ -107,13 +107,19 @@ const index = () => {
   return (
     <CommonLayout title="hobbrands" noBreadcrumb>
       <div className="">
-        <HomeSlider slides={slides} />
-        <Taq text1="BRANDING" text2="PORTFOLIO" />
-        <HomePortfolio portfolioList={portfolioList} />
-        <BlackBanner />
-        <MasonryPortfolio portfolioList={portfolioList} />
-        <Taq text1="ABOUT" text2="HOBBRANDS" />
-        <HomeAbout />
+        <div id="section1">
+          <HomeSlider slides={slides} />
+          <Taq text1="BRANDING" text2="PORTFOLIO" />
+        </div>{' '}
+        <div id="section2">
+          <HomePortfolio portfolioList={portfolioList} />
+          <BlackBanner />
+        </div>
+        <div id="section3">
+          <MasonryPortfolio portfolioList={portfolioList} />
+          <Taq text1="ABOUT" text2="HOBBRANDS" />
+          <HomeAbout />
+        </div>
       </div>
     </CommonLayout>
   )

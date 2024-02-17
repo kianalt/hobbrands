@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 // Next
 import Head from 'next/head'
@@ -8,7 +8,20 @@ import Header from 'components/Header/Header'
 import Footer from 'components/Footer/Footer'
 import Sidebar from 'components/Sidebar/Sidebar'
 // import Breadcrumb from 'components/Breadcrumb/Breadcrumb'
+function isSectionInView(sectionId) {
+  const section = document.getElementById(sectionId)
+  const bounding = section.getBoundingClientRect()
 
+  // return (
+  //   bounding.top >= 0 &&
+  //   bounding.left >= 0 &&
+  //   bounding.bottom <=
+  //     (window.innerHeight || document.documentElement.clientHeight) &&
+  //   bounding.right <=
+  //     (window.innerWidth || document.documentElement.clientWidth)
+  // )
+  return bounding.top > 0 && bounding.top < window.innerHeight
+}
 const CommonLayout = ({
   title,
   noBreadcrumb,
@@ -35,14 +48,37 @@ const CommonLayout = ({
     title,
     url: undefined,
   })
+  const [activeSection, setActiveSection] = useState('')
+  const handleScroll = () => {
+    if (isSectionInView('section1')) {
+      console.log(1)
+      setActiveSection('Text for Section 1')
+    }
+    if (isSectionInView('section2')) {
+      console.log(2)
+      setActiveSection('Text for Section 2')
+    }
+    if (isSectionInView('section3')) {
+      console.log(3)
+      setActiveSection('Text for Section 3')
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
+  console.log('activeSection: ', activeSection)
   return (
     <>
       <Head>
         <title>{`${title} | Hoptoons `}</title>
       </Head>
       <Header noBreadcrumb={noBreadcrumb} />
-      <div className="main">
-        <Sidebar />
+      <div className="main" onScroll={handleScroll}>
+        <Sidebar activeSection={activeSection} />
         <div className="page-container">
           {/* {!noBreadcrumb && (
           <Breadcrumb

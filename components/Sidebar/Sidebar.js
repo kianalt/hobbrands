@@ -14,14 +14,17 @@ import Link from 'next/link'
 //       (window.innerWidth || document.documentElement.clientWidth)
 //   )
 // }
-const Sidebar = () => {
-  const [activeSection, setActiveSection] = useState('')
+const Sidebar = ({ activeSection }) => {
+  // const [activeSection, setActiveSection] = useState('')
   const [isScrolled, setIsScrolled] = useState(false)
+
   // const handleScroll = () => {
   //   if (isSectionInView('section1')) {
   //     setActiveSection('Text for Section 1')
   //   } else if (isSectionInView('section2')) {
   //     setActiveSection('Text for Section 2')
+  //   } else if (isSectionInView('section3')) {
+  //     setActiveSection('Text for Section 3')
   //   }
   // }
   // useEffect(() => {
@@ -31,7 +34,7 @@ const Sidebar = () => {
   //   }
   // }, [])
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScrollFooter = () => {
       const footerPosition = document.querySelector('footer').offsetTop
       const scrollPosition = window.pageYOffset + window.innerHeight
       if (scrollPosition > footerPosition) {
@@ -40,11 +43,11 @@ const Sidebar = () => {
         setIsScrolled(false)
       }
     }
+    window.addEventListener('scroll', handleScrollFooter)
 
-    window.addEventListener('scroll', handleScroll)
-
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScrollFooter)
   }, [])
+
   return (
     <div className="sidebar">
       <div className="sidebar-text">
