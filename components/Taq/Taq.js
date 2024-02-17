@@ -1,7 +1,7 @@
 import React from 'react'
 import useScrollPosition from 'use-scroll-position'
 
-const Taq = () => {
+const Taq = ({ text1, text2 }) => {
   const scrollPosition = useScrollPosition()
   let translateX = 0
   if (scrollPosition >= 0 && scrollPosition <= 90) {
@@ -28,7 +28,7 @@ const Taq = () => {
         }`}
         style={{ transform: `translateX(${translateX}px)` }}
       >
-        <p>BRANDING </p>
+        <p>{text1} </p>
       </div>
       <div
         className={`${
@@ -36,7 +36,7 @@ const Taq = () => {
         }`}
         style={{ transform: `translateX(${translateX2}px)` }}
       >
-        <p>PORTFOLIO </p>
+        <p>{text2} </p>
       </div>
     </div>
   )

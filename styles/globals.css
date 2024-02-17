@@ -14,6 +14,11 @@ a,
 strong {
   font-family: 'Argentum';
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 h1 {
   font-size: 60px !important;
   font-weight: bold;
@@ -26,16 +31,30 @@ p {
   font-size: 20px !important;
   font-weight: light;
 }
-*body {
+body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
   background-color: #fff;
   box-sizing: border-box;
   text-decoration: none;
 }
+/* Flex container for the whole page */
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* Flex-grow for main content to push the footer down */
+main {
+  flex: 1; /* This will expand the main content to push the footer down */
+  flex-grow: 1;
+}
+/* Footer styles */
 footer {
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #99cc01;
+  width: 100%;
+  background-color: #040404;
+  margin: 0;
 }
 .page-container {
   min-height: 100vh;
@@ -44,7 +63,6 @@ footer {
   float: right;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
 html,
@@ -4354,4 +4372,42 @@ body {
     0 2.75px 2.21px rgba(0, 0, 0, 0.07), 0 6.65px 5.32px rgba(0, 0, 0, 0.043),
     0 12.5px 10px rgba(0, 0, 0, 0.03), 0 22px 18px rgba(0, 0, 0, 0.03),
     0 42px 33.4px rgba(0, 0, 0, 0.02), 0 100px 80px rgba(0, 0, 0, 0.017) !important;
+}
+.link-container {
+  height: 63px;
+  width: 200px;
+  border: 1px solid black;
+  position: absolute;
+  top: 98%;
+  left: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.link-container .black {
+  height: 63px;
+  width: 5px;
+  background-color: black;
+  float: left;
+  position: absolute;
+  left: 0;
+  transition: width ease-in-out 0.8s;
+}
+.link-container:hover .black {
+  width: 100%;
+}
+.link-container a {
+  text-decoration: none;
+  color: black;
+  font-weight: lighter;
+}
+.link-container:hover a,
+.link-container:hover {
+  color: #fff;
+  z-index: 3;
+  position: absolute;
+  font-weight: 300;
+}
+.m-125 {
+  margin: 0 125px;
 }

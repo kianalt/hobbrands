@@ -8,6 +8,7 @@ import Taq from 'components/Taq/Taq'
 import HomePortfolio from 'components/HomePortfolio/HomePortfolio'
 import BlackBanner from 'components/BlackBanner.js/BlackBanner'
 import MasonryPortfolio from 'components/MaoneryPortfolio/MasonryPortfolio'
+import HomeAbout from 'components/About/HomeAbout'
 
 // Api
 // import api from 'utils/api'
@@ -107,10 +108,12 @@ const index = () => {
     <CommonLayout title="hobbrands" noBreadcrumb>
       <div className="">
         <HomeSlider slides={slides} />
-        <Taq />
+        <Taq text1="BRANDING" text2="PORTFOLIO" />
         <HomePortfolio portfolioList={portfolioList} />
         <BlackBanner />
         <MasonryPortfolio portfolioList={portfolioList} />
+        <Taq text1="ABOUT" text2="HOBBRANDS" />
+        <HomeAbout />
       </div>
     </CommonLayout>
   )

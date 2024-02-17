@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const MasonryPortfolio = ({ portfolioList }) => {
   const gridRef = useRef()
@@ -30,28 +31,42 @@ const MasonryPortfolio = ({ portfolioList }) => {
 
   return (
     // Breakpoint columns configuration
-
-    <div className="my-masonry-grid-noTxt" ref={gridRef}>
-      {portfolioList.map((item, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <div
+    <div className="main-content">
+      <div className="my-masonry-grid-noTxt" ref={gridRef}>
+        {portfolioList.map((item, index) => (
           // eslint-disable-next-line react/no-array-index-key
-          key={index}
-          className="masonery-portfolio-noTxt masonery-col"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          {' '}
-          <div className="masonery-portfolio-image">
-            <div className="masonery-shadow-img" />
-            <img src={item.image} />
+          <div
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
+            className="masonery-portfolio-noTxt masonery-col"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            {' '}
+            <div className="masonery-portfolio-image">
+              <div className="masonery-shadow-img" />
+              <img src={item.image} />
+            </div>
+            <div className="masonery-portfolio-Hovertext">
+              <Link href="#">Branding</Link>
+              <Link href="#">photography</Link>
+            </div>
           </div>
-          <div className="masonery-portfolio-Hovertext">
-            <Link href="#">Branding</Link>
-            <Link href="#">photography</Link>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      <div className="aboutHome-link-container  m-l120 mt-5">
+        <div className="black" />
+        <Link href="#">
+          See Our Works{' '}
+          <Image
+            className="ml-1"
+            src="/Arrow.png"
+            width={14}
+            height={10}
+            alt="arrow"
+          />
+        </Link>
+      </div>
     </div>
   )
 }

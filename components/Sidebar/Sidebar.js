@@ -16,7 +16,7 @@ import Link from 'next/link'
 // }
 const Sidebar = () => {
   const [activeSection, setActiveSection] = useState('')
-
+  const [isScrolled, setIsScrolled] = useState(false)
   // const handleScroll = () => {
   //   if (isSectionInView('section1')) {
   //     setActiveSection('Text for Section 1')
@@ -30,27 +30,108 @@ const Sidebar = () => {
   //     window.removeEventListener('scroll', handleScroll)
   //   }
   // }, [])
+  useEffect(() => {
+    const handleScroll = () => {
+      const footerPosition = document.querySelector('footer').offsetTop
+      const scrollPosition = window.pageYOffset + window.innerHeight
+      if (scrollPosition > footerPosition) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
 
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
   return (
     <div className="sidebar">
       <div className="sidebar-text">
         <h3>{activeSection}</h3>
       </div>
-      <div className="sochial">
+      <div className="sochial  black">
         <Link href="#">
-          <Image src="/social/1.png" width={17} height={17} />
+          <Image
+            src="/social/1.png"
+            width={17}
+            height={17}
+            style={{ opacity: isScrolled ? 0 : 1 }}
+          />
         </Link>
         <Link href="#">
-          <Image src="/social/2.png" width={17} height={13} />
+          <Image
+            src="/social/2.png"
+            width={17}
+            height={13}
+            style={{ opacity: isScrolled ? 0 : 1 }}
+          />
         </Link>
         <Link href="#">
-          <Image src="/social/3.png" width={17} height={17} />
+          <Image
+            src="/social/3.png"
+            width={17}
+            height={17}
+            style={{ opacity: isScrolled ? 0 : 1 }}
+          />
         </Link>
         <Link href="#">
-          <Image src="/social/4.png" width={21} height={21} />
+          <Image
+            src="/social/4.png"
+            width={21}
+            height={21}
+            style={{ opacity: isScrolled ? 0 : 1 }}
+          />
         </Link>
         <Link href="#">
-          <Image src="/social/5.png" width={21} height={21} />
+          <Image
+            src="/social/5.png"
+            width={21}
+            height={21}
+            style={{ opacity: isScrolled ? 0 : 1 }}
+          />
+        </Link>
+      </div>
+      <div className="sochial-white">
+        <Link href="#">
+          <Image
+            src="/social-footer/1.png"
+            width={17}
+            height={17}
+            style={{ opacity: isScrolled ? 1 : 0 }}
+          />
+        </Link>
+        <Link href="#">
+          <Image
+            src="/social-footer/2.png"
+            width={17}
+            height={13}
+            style={{ opacity: isScrolled ? 1 : 0 }}
+          />
+        </Link>
+        <Link href="#">
+          <Image
+            src="/social-footer/3.png"
+            width={17}
+            height={17}
+            style={{ opacity: isScrolled ? 1 : 0 }}
+          />
+        </Link>
+        <Link href="#">
+          <Image
+            src="/social-footer/4.png"
+            width={21}
+            height={21}
+            style={{ opacity: isScrolled ? 1 : 0 }}
+          />
+        </Link>
+        <Link href="#">
+          <Image
+            src="/social-footer/5.png"
+            width={21}
+            height={21}
+            style={{ opacity: isScrolled ? 1 : 0 }}
+          />
         </Link>
       </div>
     </div>
