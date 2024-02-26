@@ -95,12 +95,12 @@ strong {
 .sidebar .sidebar-text {
   display: flex;
   align-self: center;
-  justify-content: flex-end;
-  margin-bottom: 50px;
+  justify-content: center;
+  margin-bottom: 120px;
 }
 .sidebar .sidebar-text h3 {
   color: #0d0d0d;
-  font-size: 30px !important;
+  font-size: 20px !important;
   font-weight: 200 !important;
   white-space: nowrap;
   transform: rotate(270deg);
@@ -678,6 +678,16 @@ footer .footer-container .call-to-action {
   text-align: center;
   color: #fff;
 }
+footer .footer-container .call-to-action:hover {
+  width: 100%;
+  height: 200px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+  background-color: #fff;
+}
 footer .footer-container .call-to-action h2 {
   letter-spacing: 0.1cm;
   font-weight: 500 !important;
@@ -707,11 +717,21 @@ footer .copyRight .conatcUs {
   padding-top: 15px;
   text-align: center;
 }
+footer .copyRight .conatcUs:hover {
+  background-color: #fff;
+  color: #010101;
+  font-weight: 300 !important;
+}
 footer .copyRight .up {
   width: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+footer .copyRight .up:hover {
+  background-color: #fff;
+  color: #010101;
+  font-weight: 300 !important;
 }
 footer .copyRight .up img {
   width: 60px;
