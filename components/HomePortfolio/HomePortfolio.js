@@ -6,21 +6,18 @@ const PortfolioHomePage = ({ portfolioList }) => {
   const gridRef = useRef()
   // eslint-disable-next-line no-unused-vars
   const [isotopeInstance, setIsotopeInstance] = useState(null)
-
   useEffect(() => {
-    // Ensure this code runs only in the browser
-    if (typeof window !== 'undefined') {
-      import('isotope-layout').then(Isotope => {
-        // Now you have access to Isotope as a constructor
-        // eslint-disable-next-line new-cap
-        const iso = new Isotope.default(gridRef.current, {
-          itemSelector: '.masonery-portfolio',
-          layoutMode: 'masonry',
-          gutter: 93, // Sets the horizontal space between the columns
-        })
-        setIsotopeInstance(iso) // Save the instance if you need to use it later
+    const isMobile = window.innerWidth <= 768 // Example breakpoint
+    import('isotope-layout').then(Isotope => {
+      // Now you have access to Isotope as a constructor
+      // eslint-disable-next-line new-cap
+      const iso = new Isotope.default(gridRef.current, {
+        itemSelector: '.masonery-portfolio',
+        layoutMode: 'masonry',
+        gutter: isMobile ? 0 : 93, // No gutter for mobile // Sets the horizontal space between the columns
       })
-    }
+      setIsotopeInstance(iso) // Save the instance if you need to use it later
+    })
   }, [])
   useEffect(() => {
     AOS.init()

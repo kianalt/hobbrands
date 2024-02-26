@@ -53,7 +53,7 @@ const HomeAbout = () => {
     <div className="m-125 mb-5 ">
       <div>
         <h2
-          className="text-left font-60 "
+          className="text-left font-60 homeAbout"
           style={{ fontWeight: '500px', lineHeight: '78px' }}
         >
           Honest Folks Doing
@@ -107,7 +107,7 @@ const HomeAbout = () => {
           </div>
         </div>
       </div>
-      <div className="aboutHome-link-container mt-5">
+      <div className="aboutHome-link-container mobile-b mt-4 ">
         <div className="black" />
         <Link href="#">
           About Us{' '}

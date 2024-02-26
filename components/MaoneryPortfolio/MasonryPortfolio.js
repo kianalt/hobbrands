@@ -10,7 +10,8 @@ const MasonryPortfolio = ({ portfolioList }) => {
   const [isotopeInstance, setIsotopeInstance] = useState(null)
 
   useEffect(() => {
-    // Ensure this code runs only in the browser
+    // Ensure this code runs only in the browser\
+    const isMobile = window.innerWidth <= 768 // Example breakpoint
     if (typeof window !== 'undefined') {
       import('isotope-layout').then(Isotope => {
         // Now you have access to Isotope as a constructor
@@ -18,7 +19,7 @@ const MasonryPortfolio = ({ portfolioList }) => {
         const iso = new Isotope.default(gridRef.current, {
           itemSelector: '.masonery-portfolio-noTxt',
           layoutMode: 'masonry',
-          gutter: 20, // Sets the horizontal space between the columns
+          gutter: isMobile ? 0 : 20, // Sets the horizontal space between the columns
         })
         setIsotopeInstance(iso) // Save the instance if you need to use it later
       })
@@ -54,7 +55,7 @@ const MasonryPortfolio = ({ portfolioList }) => {
           </div>
         ))}
       </div>
-      <div className="aboutHome-link-container  m-l120 mt-5">
+      <div className="aboutHome-link-container no-mobile m-l120 mt-5">
         <div className="black" />
         <Link href="#">
           See Our Works{' '}

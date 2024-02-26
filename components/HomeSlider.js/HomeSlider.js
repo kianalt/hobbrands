@@ -82,6 +82,18 @@ const HomeSlider = ({ slides }) => {
                 <img src={slides[currentSlide].image5} alt="" />
               </div>
             </div>
+            <div className="image-container-mobile">
+              <div
+                className={`${
+                  animate ? '  imageMobile-animate' : 'imageMobile'
+                }`}
+              >
+                <img src={slides[currentSlide].image1} alt="" />
+                <div className="downArrow">
+                  <Image src="/downArrow.png" width={10} height={20} alt="" />
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
