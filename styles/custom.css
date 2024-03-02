@@ -85,6 +85,23 @@ strong {
   display: inline-flex;
 }
 @media screen and (max-width: 768px) {
+  .title-container {
+    margin-left: 35px !important;
+    margin-top: 255px !important;
+  }
+  .title-container h1 {
+    font-size: 30px !important;
+  }
+  .category-filters {
+    width: 100% !important;
+    margin: 50px 10px 30px 30px !important;
+    display: block !important;
+  }
+  .category-filters button {
+    width: 50%;
+    text-align: left;
+  }
+
   .sidebar {
     display: none !important;
   }
@@ -408,6 +425,31 @@ strong {
     color: #000;
     font-size: 14px;
     font-weight: 400;
+  }
+}
+@media (min-width: 769px) and (max-width: 1200px) {
+  .title-container {
+    margin-left: 80px !important;
+  }
+  .page-container .title-container h1 {
+    font-size: 40px !important;
+  }
+  .category-filters {
+    margin-left: 6% !important ;
+    margin-top: 43px !important;
+  }
+  .category-filters button p {
+    font-size: 12px !important;
+  }
+  .my-masonry-grid {
+    margin: 0 50px !important;
+  }
+  .masonery-portfolio {
+    width: calc(50% - 0px) !important;
+    padding: 0 73px 56px 43px !important;
+  }
+  .my-masonry-grid-noTxt {
+    margin: 40px !important;
   }
 }
 .copyRight-mobile {
@@ -800,7 +842,7 @@ strong {
 }
 .my-masonry-grid-noTxt {
   width: 100%;
-  margin: 120px;
+  margin: 120px 120px 120px 80px;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
@@ -1114,4 +1156,44 @@ footer .copyRight .date p {
   font-size: 16px !important;
   font-weight: 200 !important;
   color: #fff;
+}
+.title-container {
+  width: 100%;
+  margin-top: 300px;
+  margin-left: 120px;
+}
+.title-container h1 {
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: 20%;
+}
+.category-filters {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 100px;
+  margin-top: 83px;
+}
+.category-filters button {
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+.category-filters button p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #606060;
+}
+.category-filters button:hover p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #050505;
+}
+.category-menue img {
+  width: 140px;
+  object-fit: contain;
+}
+.category-filters button img {
+  display: none;
 }
