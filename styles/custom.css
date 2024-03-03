@@ -26,6 +26,11 @@ strong {
   background-color: #fff;
 }
 @media screen and (max-width: 800px) {
+  .masonery-portfolio-image .overlay {
+    position: absolute !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    width: calc(100% - 50px) !important;
+  }
   .mainHeader {
     height: 70px;
     overflow: hidden;
@@ -85,6 +90,54 @@ strong {
   display: inline-flex;
 }
 @media screen and (max-width: 768px) {
+  .ImageBanner .text-container {
+    left: 10%;
+    top: 0;
+    right: 10%;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    align-items: center;
+    justify-content: space-evenly !important;
+  }
+  .ImageBanner .text-container p {
+    color: #fff;
+    font-size: 25px !important;
+  }
+  .imageBanner-button-container {
+    width: 57% !important;
+    background-color: #1a1a1a;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 10px !important;
+    padding: 0 5px !important;
+  }
+  .imageBanner-button-container img {
+    width: 10px !important;
+  }
+  .ImageBanner .text-container {
+    left: 5% !important;
+    right: 5% !important;
+    width: 90% !important;
+  }
+  .ImageBanner .backgroundImage img {
+    height: 300px !important;
+  }
+  .ImageBanner {
+    width: 100%;
+    height: 300px !important;
+    position: relative;
+    margin-bottom: 30px;
+  }
+  .ImageBanner .backgroundImage {
+    width: 100%;
+    height: 300px !important;
+  }
   .title-container {
     margin-left: 35px !important;
     margin-top: 255px !important;
@@ -280,7 +333,22 @@ strong {
     display: none !important;
     height: 70px !important;
   }
-
+  .masonery-portfolio-noTxt .masonery-title-Hovertext {
+    width: 100% !important;
+    position: absolute;
+    top: 48%;
+    left: 38%;
+    z-index: 5;
+    color: #ffffff;
+    display: flex;
+    height: 40px;
+    cursor: pointer;
+    overflow: visible !important;
+  }
+  .masonery-portfolio-noTxt .masonery-title-Hovertext p {
+    font-size: 30px;
+    font-weight: 500;
+  }
   .masonery-portfolio-noTxt .masonery-portfolio-Hovertext {
     width: 100% !important;
     position: absolute;
@@ -428,6 +496,69 @@ strong {
   }
 }
 @media (min-width: 769px) and (max-width: 1200px) {
+  .masonery-portfolio-noTxt:hover .masonery-portfolio-Hovertext {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 1px !important;
+    z-index: 5;
+    color: #ffffff;
+    display: flex;
+    height: 40px;
+  }
+  .masonery-portfolio-noTxt:hover .masonery-portfolio-Hovertex {
+    padding: 2px 2px 3px 2px !important;
+    font-size: smaller !important;
+  }
+  .masonery-portfolio-noTxt:hover .masonery-title-Hovertext {
+    top: 38% !important;
+  }
+  .ImageBanner .text-container {
+    left: 10%;
+    top: 0;
+    right: 10%;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    z-index: 3;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ImageBanner .text-container p {
+    color: #fff;
+    font-size: 25px !important;
+  }
+  .imageBanner-button-container {
+    width: 27% !important;
+    background-color: #1a1a1a;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 10px !important;
+    padding: 0 5px !important;
+  }
+  .imageBanner-button-container img {
+    width: 10px !important;
+  }
+  .ImageBanner .text-container {
+    left: 5% !important;
+    right: 5% !important;
+    width: 90% !important;
+  }
+  .ImageBanner .backgroundImage img {
+    height: 300px !important;
+  }
+  .ImageBanner {
+    width: 100%;
+    height: 300px !important;
+    position: relative;
+  }
+  .ImageBanner .backgroundImage {
+    width: 100%;
+    height: 300px !important;
+  }
   .title-container {
     margin-left: 80px !important;
   }
@@ -871,6 +1002,23 @@ strong {
 .masonery-portfolio-noTxt:hover .masonery-shadow-img {
   opacity: 1; /* Show the shadow on hover */
 }
+.masonery-portfolio-noTxt .masonery-title-Hovertext {
+  width: 0;
+  overflow: hidden;
+  position: absolute;
+}
+.masonery-portfolio-noTxt:hover .masonery-title-Hovertext {
+  width: 100%;
+  position: absolute;
+  top: 48%;
+  left: 40%;
+  z-index: 5;
+  color: #ffffff;
+  display: flex;
+}
+.masonery-portfolio-noTxt:hover .masonery-title-Hovertext p {
+  font-size: 30px;
+}
 .masonery-portfolio-noTxt .masonery-portfolio-Hovertext {
   width: 0;
   overflow: hidden;
@@ -885,6 +1033,24 @@ strong {
   color: #ffffff;
   display: flex;
   height: 40px;
+}
+.masonery-portfolio-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  /*Transparentinitially*/
+  transition: background-color 0.5s ease;
+  /* Smooth transition */
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -ms-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+}
+.masonery-portfolio-image:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent gray on hover */
 }
 .masonery-portfolio-noTxt:hover .masonery-portfolio-Hovertext a {
   text-decoration: none;
@@ -1174,6 +1340,7 @@ footer .copyRight .date p {
   justify-content: space-around;
   margin-left: 100px;
   margin-top: 83px;
+  position: relative;
 }
 .category-filters button {
   background: none;
@@ -1196,4 +1363,51 @@ footer .copyRight .date p {
 }
 .category-filters button img {
   display: none;
+}
+.ImageBanner {
+  width: 100%;
+  height: 470px;
+  position: relative;
+}
+.ImageBanner .backgroundImage {
+  width: 100%;
+  height: 470px;
+  position: relative;
+}
+.ImageBanner .backgroundImage img {
+  width: 100%;
+  height: 470px;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+}
+.ImageBanner .text-container {
+  left: 10%;
+  top: 0;
+  right: 10%;
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  z-index: 3;
+  align-items: center;
+  justify-content: space-between;
+}
+.ImageBanner .text-container p {
+  color: #fff;
+  font-size: 30px;
+}
+.imageBanner-button-container {
+  width: 20%;
+  padding: 0 5px;
+  background-color: #1a1a1a;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.imageBanner-button-containe a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 18px t;
 }

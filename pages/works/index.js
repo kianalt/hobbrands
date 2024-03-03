@@ -3,10 +3,9 @@ import React from 'react'
 // Componenet
 
 import CommonLayout from 'layouts/CommonLayout'
-
-import BlackBanner from 'components/BlackBanner.js/BlackBanner'
 import MasonryPortfolio from 'components/MaoneryPortfolio/MasonryPortfolio'
 import Title from 'components/Title/Title'
+import ImageBanner from 'components/ImageBanner.js/ImageBanner'
 
 // Api
 // import api from 'utils/api'
@@ -93,11 +92,10 @@ const index = () => {
         />
       </div>
       <div id="section2">
-        <BlackBanner />
+        <ImageBanner />
       </div>
 
       <div id="section3">
-        {' '}
         {portfolioList.length > 3 && (
           <MasonryPortfolio
             portfolioList={portfolioList.slice(

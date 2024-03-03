@@ -121,7 +121,7 @@ const MasonryPortfolio = ({ portfolioList, noButton, isFilter }) => {
           </button>
         </div>
       )}
-      <div className="main-content">
+      <div className="main-content" style={{ position: 'relative' }}>
         <div className="my-masonry-grid-noTxt" ref={gridRef}>
           {portfolioList.map((item, index) => (
             <div
@@ -132,6 +132,10 @@ const MasonryPortfolio = ({ portfolioList, noButton, isFilter }) => {
             >
               <div className="masonery-portfolio-image">
                 <img src={item.image} alt="" />
+                <div className="overlay" />
+              </div>
+              <div className="masonery-title-Hovertext">
+                <p>title</p>
               </div>
               <div className="masonery-portfolio-Hovertext">
                 <Link href="#">Branding</Link>
