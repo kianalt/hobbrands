@@ -51,15 +51,12 @@ const CommonLayout = ({
   const [activeSection, setActiveSection] = useState('')
   const handleScroll = () => {
     if (isSectionInView('section1')) {
-      console.log(1)
       setActiveSection('Text for Section 1')
     }
     if (isSectionInView('section2')) {
-      console.log(2)
       setActiveSection('Text for Section 2')
     }
     if (isSectionInView('section3')) {
-      console.log(3)
       setActiveSection('Text for Section 3')
     }
   }
@@ -70,7 +67,6 @@ const CommonLayout = ({
     }
   }, [])
 
-  console.log('activeSection: ', activeSection)
   return (
     <>
       <Head>
