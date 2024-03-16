@@ -4411,3 +4411,9 @@ body {
 .m-125 {
   margin: 0 125px;
 }
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #262626 !important;
+  font-size: 10px;
+  width: 5px !important;
+}
