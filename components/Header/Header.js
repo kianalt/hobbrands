@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Header = () => (
+const Header = ({ status, setStatus }) => (
   <header>
     <div className="mainHeader">
       <div className="header-logo">
@@ -28,11 +30,15 @@ const Header = () => (
           </li>
         </ul>
       </div>
-      <div className="burgur-menue">
+      <div
+        className="burgur-menue-icon"
+        onClick={() => {
+          setStatus(!status)
+        }}
+      >
         <Image src="/logo/burgur.png" width={40} height={20} />
       </div>
     </div>
   </header>
 )
-
 export default Header

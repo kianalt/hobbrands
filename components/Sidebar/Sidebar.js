@@ -14,7 +14,7 @@ import Link from 'next/link'
 //       (window.innerWidth || document.documentElement.clientWidth)
 //   )
 // }
-const Sidebar = ({ activeSection }) => {
+const Sidebar = ({ activeSection, status }) => {
   // const [activeSection, setActiveSection] = useState('')
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -50,51 +50,69 @@ const Sidebar = ({ activeSection }) => {
 
   return (
     <div className="sidebar">
-      <div className="sidebar-text">
-        <h3>{activeSection}</h3>
-      </div>
-      <div className="sochial  black">
-        <Link href="#">
-          <Image
-            src="/social/1.png"
-            width={17}
-            height={17}
-            style={{ opacity: isScrolled ? 0 : 1 }}
-          />
-        </Link>
-        <Link href="#">
-          <Image
-            src="/social/2.png"
-            width={17}
-            height={13}
-            style={{ opacity: isScrolled ? 0 : 1 }}
-          />
-        </Link>
-        <Link href="#">
-          <Image
-            src="/social/3.png"
-            width={17}
-            height={17}
-            style={{ opacity: isScrolled ? 0 : 1 }}
-          />
-        </Link>
-        <Link href="#">
-          <Image
-            src="/social/4.png"
-            width={21}
-            height={21}
-            style={{ opacity: isScrolled ? 0 : 1 }}
-          />
-        </Link>
-        <Link href="#">
-          <Image
-            src="/social/5.png"
-            width={21}
-            height={21}
-            style={{ opacity: isScrolled ? 0 : 1 }}
-          />
-        </Link>
-      </div>
+      <div className="sidebar-text">{!status && <h3>{activeSection}</h3>}</div>
+      {status === false ? (
+        <div className="sochial  black">
+          <Link href="#">
+            <Image
+              src="/social/1.png"
+              width={17}
+              height={17}
+              style={{ opacity: isScrolled ? 0 : 1 }}
+            />
+          </Link>
+          <Link href="#">
+            <Image
+              src="/social/2.png"
+              width={17}
+              height={13}
+              style={{ opacity: isScrolled ? 0 : 1 }}
+            />
+          </Link>
+          <Link href="#">
+            <Image
+              src="/social/3.png"
+              width={17}
+              height={17}
+              style={{ opacity: isScrolled ? 0 : 1 }}
+            />
+          </Link>
+          <Link href="#">
+            <Image
+              src="/social/4.png"
+              width={21}
+              height={21}
+              style={{ opacity: isScrolled ? 0 : 1 }}
+            />
+          </Link>
+          <Link href="#">
+            <Image
+              src="/social/5.png"
+              width={21}
+              height={21}
+              style={{ opacity: isScrolled ? 0 : 1 }}
+            />
+          </Link>
+        </div>
+      ) : (
+        <div className="sochial  black">
+          <Link href="#">
+            <Image src="/social/1.png" width={17} height={17} />
+          </Link>
+          <Link href="#">
+            <Image src="/social/2.png" width={17} height={13} />
+          </Link>
+          <Link href="#">
+            <Image src="/social/3.png" width={17} height={17} />
+          </Link>
+          <Link href="#">
+            <Image src="/social/4.png" width={21} height={21} />
+          </Link>
+          <Link href="#">
+            <Image src="/social/5.png" width={21} height={21} />
+          </Link>
+        </div>
+      )}
       <div className="sochial-white">
         <Link href="#">
           <Image

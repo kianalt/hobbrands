@@ -25,6 +25,17 @@ strong {
   border-bottom: 1px solid #d9d9d9;
   background-color: #fff;
 }
+.burgur-menue-icon {
+  width: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  border-left: 1px solid #d9d9d9;
+}
+.burgur-menue-icon img {
+  width: 45px;
+  margin: 35px 45px !important;
+}
 @media screen and (max-width: 800px) {
   .masonery-portfolio-image .overlay {
     position: absolute !important;
@@ -61,7 +72,7 @@ strong {
   padding: 0;
 }
 .header-menue {
-  width: 73%;
+  width: 83%;
 }
 .header-menue ul {
   width: 100%;
@@ -2285,6 +2296,13 @@ footer .copyRight .date p {
 .message-text {
   display: none;
 }
+.form2 .name-text,
+.form2 .email-text,
+.form2 .reigon-text,
+.form2 .message-text {
+  display: block !important;
+  opacity: 0;
+}
 .contact-container {
   margin: 270px 10%;
 }
@@ -2340,7 +2358,15 @@ footer .copyRight .date p {
   font-size: 30px;
   font-weight: 200;
 }
-
+.burgermenue-container .contact-form .form2 input {
+  width: 90%;
+  border: none;
+  border-bottom: 1px solid #dddbdb;
+  height: 75px;
+  margin-top: 40px;
+  font-size: 20px !important;
+  font-weight: 200;
+}
 .contact-form p {
   margin-bottom: -10px !important;
   margin-top: 40px;
@@ -2646,4 +2672,63 @@ footer .copyRight .date p {
   max-height: 800px;
   object-fit: cover;
   padding: 5% 2.5%;
+}
+.burgermenue-container.close {
+  display: none;
+}
+.burgermenue-container.open {
+  display: block;
+  position: absolute;
+
+  left: 138px;
+  width: calc(100% - 124px);
+  max-width: 1795px;
+  float: right;
+  display: flex;
+  z-index: 5;
+  background-color: #ffff;
+
+  height: 100% !important;
+  flex-direction: column;
+}
+.burgermenue-container {
+  margin: 210px 126px;
+}
+.burgermenue-container .subMenue {
+  width: 100%;
+  display: flex;
+  padding-bottom: 125px;
+  margin-bottom: 125px;
+  border-bottom: 0.81px solid #d1d0d0;
+}
+.burgermenue-container .subMenue ul {
+  display: inline;
+  width: 25%;
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 35px;
+  cursor: pointer;
+}
+.burgermenue-container .subMenue li {
+  font-size: 20px;
+  font-weight: 200;
+  margin-top: 25px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.conatct-form-burgur-menue {
+  display: flex;
+  justify-content: center;
+}
+.conatct-form-burgur-menue h2 {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 5%;
+  margin-top: 50px;
+  cursor: pointer;
+}
+.conatct-form-burgur-menue .contact-form {
+  margin: 0 !important;
+  width: 100% !important;
 }

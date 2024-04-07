@@ -7,6 +7,8 @@ import Head from 'next/head'
 import Header from 'components/Header/Header'
 import Footer from 'components/Footer/Footer'
 import Sidebar from 'components/Sidebar/Sidebar'
+import Menue from 'components/Burgure/Menue'
+
 // import Breadcrumb from 'components/Breadcrumb/Breadcrumb'
 function isSectionInView(sectionId) {
   const section = document.getElementById(sectionId)
@@ -31,6 +33,8 @@ const CommonLayout = ({
   subParentRoute,
   children,
 }) => {
+  const [status, setStatus] = useState(false)
+  console.log(status)
   const breadcrumbList = []
   if (parentRoute) {
     breadcrumbList.push({
@@ -72,24 +76,34 @@ const CommonLayout = ({
       <Head>
         <title>{`${title} | Hoptoons `}</title>
       </Head>
-      <Header noBreadcrumb={noBreadcrumb} />
-      <div className="main" onScroll={handleScroll}>
-        <Sidebar activeSection={activeSection} />
-        <div className="page-container">
-          {/* {!noBreadcrumb && (
-          <Breadcrumb
-            title={title}
-            parent={parent}
-            parentRoute={parentRoute}
-            subParent={subParent}
-            subParentRoute={subParentRoute}
-          />
-        )} */}
+      <Header
+        noBreadcrumb={noBreadcrumb}
+        status={status}
+        setStatus={setStatus}
+      />
 
-          {children}
-        </div>
-      </div>
-      <Footer />
+      {!status && (
+        <>
+          <div className="main" onScroll={handleScroll}>
+            <Sidebar activeSection={activeSection} />
+            <div className="page-container">{children}</div>
+          </div>
+          <Footer />
+        </>
+      )}
+      {status && (
+        <>
+          <div className="main" onScroll={handleScroll}>
+            <Sidebar activeSection={activeSection} status={status} />
+            <div className="page-container">
+              <Menue />
+            </div>
+          </div>
+          <div style={{ display: 'none' }}>
+            <Footer />
+          </div>
+        </>
+      )}
     </>
   )
 }
