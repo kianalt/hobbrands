@@ -33,9 +33,7 @@ const Menue = () => (
       </div>
       <div className="conatct-form-burgur-menue row">
         <div className="col-lg-5">
-          <h2>
-            We look forward to <br /> hearing from you.
-          </h2>
+          <h2>We look forward to hearing from you.</h2>
         </div>
         <div className="col-lg-7">
           <div className="contact-form">

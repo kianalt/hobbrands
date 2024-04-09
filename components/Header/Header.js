@@ -36,7 +36,8 @@ const Header = ({ status, setStatus }) => (
           setStatus(!status)
         }}
       >
-        <Image src="/logo/burgur.png" width={40} height={20} />
+        {!status && <Image src="/logo/burgur.png" width={40} height={20} />}
+        {status && <Image src="/close.png" width={25} height={25} />}
       </div>
     </div>
   </header>

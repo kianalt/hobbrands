@@ -109,7 +109,7 @@ const HomeAbout = () => {
       </div>
       <div className="aboutHome-link-container mobile-b mt-4 ">
         <div className="black" />
-        <Link href="#">
+        <Link href="/about">
           About Us{' '}
           <Image
             className="ml-1"

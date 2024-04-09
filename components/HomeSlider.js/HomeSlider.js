@@ -35,15 +35,19 @@ const HomeSlider = ({ slides }) => {
               currentSlide === index ? 'animationSlider-active ' : ''
             } `}
             // eslint-disable-next-line react/no-array-index-key
-            key={index}
+            key={slide._id}
           >
             <div className="text-container">
               <div className="logo">
-                <Image src={slide.image6} width={722} height={253} />
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_ORIGIN}${slide?.values.logo}/1200x1200`}
+                  width={722}
+                  height={253}
+                />
               </div>
               <div className="link-container">
                 <div className="black" />
-                <Link href="#">
+                <Link href={`/works/${slide?.values.slug}`}>
                   See Our Works{' '}
                   <Image
                     className="ml-1"
@@ -59,27 +63,42 @@ const HomeSlider = ({ slides }) => {
               <div
                 className={`${animate ? ' image1 image1-animate' : 'image1'}`}
               >
-                <img src={slides[currentSlide].image1} alt="" />
+                <img
+                  src={`${process.env.NEXT_PUBLIC_ORIGIN}${slides[currentSlide]?.values.image1}  /1200x1200`}
+                  alt=""
+                />
               </div>
               <div
                 className={`${animate ? ' image2 image2-animate' : 'image2'}`}
               >
-                <img src={slides[currentSlide].image2} alt="" />
+                <img
+                  src={`${process.env.NEXT_PUBLIC_ORIGIN}${slides[currentSlide]?.values.image2}  /1200x1200`}
+                  alt=""
+                />
               </div>
               <div
                 className={`${animate ? ' image3 image3-animate' : 'image3'}`}
               >
-                <img src={slides[currentSlide].image3} alt="" />
+                <img
+                  src={`${process.env.NEXT_PUBLIC_ORIGIN}${slides[currentSlide]?.values.image3} /1200x1200`}
+                  alt=""
+                />
               </div>
               <div
                 className={`${animate ? ' image4 image4-animate' : 'image4'}`}
               >
-                <img src={slides[currentSlide].image4} alt="" />
+                <img
+                  src={`${process.env.NEXT_PUBLIC_ORIGIN}${slides[currentSlide]?.values.image4}  /1200x1200`}
+                  alt=""
+                />
               </div>
               <div
                 className={`${animate ? ' image5 image5-animate' : 'image5'}`}
               >
-                <img src={slides[currentSlide].image5} alt="" />
+                <img
+                  src={`${process.env.NEXT_PUBLIC_ORIGIN}${slides[currentSlide]?.values.image5}  /1200x1200`}
+                  alt=""
+                />
               </div>
             </div>
             <div className="image-container-mobile">
@@ -88,9 +107,14 @@ const HomeSlider = ({ slides }) => {
                   animate ? '  imageMobile-animate' : 'imageMobile'
                 }`}
               >
-                <img src={slides[currentSlide].image1} alt="" />
+                <img
+                  src={`${process.env.NEXT_PUBLIC_ORIGIN}${slides[currentSlide]?.values.image6}  /1200x1200`}
+                  alt=""
+                />
                 <div className="downArrow">
-                  <Image src="/downArrow.png" width={10} height={20} alt="" />
+                  <Link href={`/works/${slide?.values.slug}`}>
+                    <Image src="/downArrow.png" width={10} height={20} alt="" />
+                  </Link>
                 </div>
               </div>
             </div>

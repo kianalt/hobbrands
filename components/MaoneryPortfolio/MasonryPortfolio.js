@@ -5,7 +5,12 @@ import 'aos/dist/aos.css'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const MasonryPortfolio = ({ portfolioList, noButton, isFilter }) => {
+const MasonryPortfolio = ({
+  projectList,
+  noButton,
+  isFilter,
+  categoryList,
+}) => {
   const gridRef = useRef()
   const [isotopeInstance, setIsotopeInstance] = useState(null)
   const router = useRouter()
@@ -59,95 +64,66 @@ const MasonryPortfolio = ({ portfolioList, noButton, isFilter }) => {
     <div>
       {isFilter && (
         <div className="category-filters">
-          <button
-            className="category-menue"
-            onClick={() => filterItems('*')}
-            type="button"
-          >
-            <img src="/upLine.png" />
-            <p> All</p>
-            <img src="/downLine.png" />
-          </button>
-          <button
-            className="category-menue"
-            onClick={() => filterItems('branding')}
-            type="button"
-          >
-            <img src="/upLine.png" />
-            <p> Branding</p>
-            <img src="/downLine.png" />
-          </button>
-          <button
-            className="category-menue"
-            onClick={() => filterItems('logodesign')}
-            type="button"
-          >
-            <img src="/upLine.png" />
-            <p> Logo Design</p> <img src="/downLine.png" />
-          </button>
-          <button
-            className="category-menue"
-            onClick={() => filterItems('ui-ux')}
-            type="button"
-          >
-            <img src="/upLine.png" /> <p>UI / UX </p>
-            <img src="/downLine.png" />
-          </button>
-          <button
-            className="category-menue"
-            onClick={() => filterItems('photography')}
-            type="button"
-          >
-            <img src="/upLine.png" />
-            <p> Photography</p>
-            <img src="/downLine.png" />
-          </button>
-          <button
-            className="category-menue"
-            onClick={() => filterItems('socialmedia')}
-            type="button"
-          >
-            <img src="/upLine.png" /> <p>Social Media</p>
-            <img src="/downLine.png" />
-          </button>
-          <button
-            className="category-menue"
-            onClick={() => filterItems('socialmedia')}
-            type="button"
-          >
-            <img src="/upLine.png" />
-            <p> Promotional Video / Animation</p>
-            <img src="/downLine.png" />
-          </button>
+          {categoryList?.map(category => (
+            <button
+              className="category-menue"
+              onClick={() => filterItems(`${category?.values.slug}`)}
+              type="button"
+              key={category._id}
+            >
+              <img src="/upLine.png" />
+              <p> {category?.values.title}</p>
+              <img src="/downLine.png" />
+            </button>
+          ))}
         </div>
       )}
       <div className="main-content" style={{ position: 'relative' }}>
         <div className="my-masonry-grid-noTxt" ref={gridRef}>
-          {portfolioList.map((item, index) => (
-            <div
-              key={index}
-              className={`masonery-portfolio-noTxt masonery-col ${item.category}`}
-              data-aos="fade-up"
-              data-aos-duration="1000"
-            >
-              <div className="masonery-portfolio-image">
-                <img src={item.image} alt="" />
-                <div className="overlay" />
+          {projectList?.map(item => {
+            const categories = item.relatedContents
+              .filter(
+                relatedContent => relatedContent.contentType === 'category',
+              )
+              .map(category => category.values.slug)
+
+            return (
+              <div
+                key={item._id}
+                className={`masonery-portfolio-noTxt masonery-col ${categories.join(
+                  ' ',
+                )}`}
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                <Link href={`works/${item?.values.slug}`}>
+                  <div className="masonery-portfolio-image">
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_ORIGIN}${item.values.image}`}
+                      alt=""
+                    />
+
+                    <div className="overlay" />
+                  </div>{' '}
+                </Link>
+                <div className="masonery-title-Hovertext">
+                  <p>{item.values.title}</p>
+                </div>
+                <div className="masonery-portfolio-Hovertext">
+                  {categories.map((category, index) => (
+                    <Link href={`/works?category=${category}`} key={index}>
+                      {category}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <div className="masonery-title-Hovertext">
-                <p>title</p>
-              </div>
-              <div className="masonery-portfolio-Hovertext">
-                <Link href="#">Branding</Link>
-                <Link href="#">photography</Link>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
         {!noButton && (
           <div className="link-container">
             {/* Link to see more works */}
-            <Link href="/portfolio">See Our Works</Link>
+            <Link href="/works">See Our Works</Link>
           </div>
         )}
       </div>

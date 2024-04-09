@@ -2,41 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-const ProjectDetail2 = () => {
-  const portfolioList = [
-    {
-      id: 0,
-      image: '/portfolio/1.png',
-      title: 'Shop for your beautiful moments',
-      category: 'branding',
-    },
-
-    {
-      id: 1,
-      image: '/portfolio/2.png',
-      title: 'Make your dreams',
-      category: 'logo-design',
-    },
-    {
-      id: 2,
-      image: '/portfolio/3.png',
-      title: 'Beautiful Poeple, beauty world',
-      category: 'ui-ux',
-    },
-    { id: 3, image: '/portfolio/4.png', title: 'Solution for everything' },
-    {
-      id: 4,
-      image: '/portfolio/5.png',
-      title: 'Beautiful Poeple, beauty world',
-      category: 'photography',
-    },
-    {
-      id: 5,
-      image: '/portfolio/6.png',
-      title: 'Beautiful Poeple, beauty world',
-      category: 'socialmedia',
-    },
-  ]
+const ProjectDetail2 = ({ project }) => {
   const gridRef = useRef()
   // eslint-disable-next-line no-unused-vars
   const [isotopeInstance, setIsotopeInstance] = useState(null)
@@ -61,29 +27,67 @@ const ProjectDetail2 = () => {
   return (
     <div className="ProjectDetail2">
       <div className="ProjectDetail2-text">
-        <h6>Shop for your beautiful moments</h6>
-        <p>
-          The brand aims to attract mostly young customers and challenge the
-          established brands. We not only designed the brand’s visual identity
-          but also proposed some ideas for clothing design and print patterns.
-        </p>
+        <p>{project?.values.description3}</p>
       </div>
       <div className="projectDetail2-images">
         <div className="main-content" style={{ position: 'relative' }}>
           <div className="my-masonry-grid-noTxt" ref={gridRef}>
-            {portfolioList.slice(3, portfolioList.length).map((item, index) => (
+            {project?.values.image5 && (
               <div
-                key={index}
                 className="masonery-portfolio"
                 data-aos="fade-up"
                 data-aos-duration="1500"
               >
                 <div className="masonery-portfolio-image">
-                  <img src={item.image} />
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_ORIGIN}${project?.values.image5}`}
+                  />
                 </div>
                 <div className="txt-masonery-container" />
               </div>
-            ))}
+            )}
+            {project?.values.image6 && (
+              <div
+                className="masonery-portfolio"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+              >
+                <div className="masonery-portfolio-image">
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_ORIGIN}${project?.values.image6}`}
+                  />
+                </div>
+                <div className="txt-masonery-container" />
+              </div>
+            )}
+            {project?.values.image7 && (
+              <div
+                className="masonery-portfolio"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+              >
+                <div className="masonery-portfolio-image">
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_ORIGIN}${project?.values.image7}`}
+                  />
+                </div>
+                <div className="txt-masonery-container" />
+              </div>
+            )}
+            {project?.values.image8 && (
+              <div
+                className="masonery-portfolio"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+              >
+                <div className="masonery-portfolio-image">
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_ORIGIN}${project?.values.image8}`}
+                  />
+                </div>
+                <div className="txt-masonery-container" />
+              </div>
+            )}
           </div>
         </div>
       </div>

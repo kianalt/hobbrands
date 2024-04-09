@@ -34,7 +34,7 @@ const CommonLayout = ({
   children,
 }) => {
   const [status, setStatus] = useState(false)
-  console.log(status)
+
   const breadcrumbList = []
   if (parentRoute) {
     breadcrumbList.push({

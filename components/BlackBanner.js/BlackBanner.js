@@ -12,7 +12,7 @@ const BlackBanner = () => (
     </div>
     <div className="link-blackContainer">
       <div className="white" />
-      <Link href="#">
+      <Link href="/works">
         See Our Works{' '}
         <Image
           className="ml-3"
