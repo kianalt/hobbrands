@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable prefer-destructuring */
 import React from 'react'
 import Link from 'next/link'
 
