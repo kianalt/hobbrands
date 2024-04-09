@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useRef } from 'react'
+import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 // eslint-disable-next-line import/no-extraneous-dependencies
-import SwiperCore, { Navigation } from 'swiper/core'
+
 import 'swiper/swiper-bundle.css'
 
 const CustomNextArrow = () => (
