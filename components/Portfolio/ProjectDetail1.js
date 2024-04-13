@@ -3,9 +3,10 @@ import React from 'react'
 import Link from 'next/link'
 
 const ProjectDetail1 = ({ project }) => {
-  const categories = project.relatedContents
-    .filter(relatedContent => relatedContent.contentType === 'category')
-    .map(category => category.values.slug)
+  const categories =
+    project?.relatedContents
+      ?.filter(relatedContents => relatedContents.contentType === 'category')
+      .map(category => category.values.slug) || []
   return (
     <div className="ProjectDetail1">
       <div className="ProjectDetail1-text">
