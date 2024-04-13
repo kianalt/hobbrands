@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import CommonLayout from 'layouts/CommonLayout'
 import AboutDetails from 'components/About/AboutDetails'
 import AboutDescription from 'components/About/AboutDescription'
-import HorizentalAbout from 'components/About/HorizentalAbout'
+// import HorizentalAbout from 'components/About/HorizentalAbout'
 // Api
 // import api from 'utils/api'
 
@@ -78,10 +78,10 @@ const About = () => {
           <AboutDetails />
         </div>
         <div id="section2">
-          <HorizentalAbout
+          {/* <HorizentalAbout
             isHorizentalScroll={isHorizentalScroll}
             galleryRef={galleryRef}
-          />
+          /> */}
         </div>
         <div id="section3">
           <AboutDescription />

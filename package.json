@@ -24,7 +24,7 @@
     "react-slick": "^0.29.0",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.0.7",
+    "swiper": "^11.1.0",
     "use-scroll-position": "^0.0.4"
   },
   "devDependencies": {
